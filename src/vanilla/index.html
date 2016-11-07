@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>vanilla to do list</title>
+    <link href="//cdn.muicss.com/mui-0.9.3/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="//cdn.muicss.com/mui-0.9.3/js/mui.min.js"></script>
 </head>
 <body>
-hello vanilla
+<div class="mui-container-fluid">
+    <div class="mui-row main-title-container">
+        <div class="mui-col-md-12 main-title-box">
+            <h1 class="main-title">To Do List</h1>
+        </div>
+    </div>
+    <div class="mui-row">
+        <div class="mui-col-xs-12 mui-col-md-8 mui-col-md-offset-2">
+            <div class="mui-textfield">
+                <input class="todo-input" type="text" placeholder="todo">
+            </div>
+        </div>
+    </div>
+    <div class="mui-row">
+        <div class="mui-col-xs-12 mui-col-md-8 mui-col-md-offset-2">
+            <table class="todo-table mui-table mui-table--bordered">
+                <tbody class="todo-item-box">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
 </body>
 </html>

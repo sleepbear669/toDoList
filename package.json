@@ -4,6 +4,7 @@
   "description": "bears' cave ",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --progress --colors --watch --hot --inline --port 9090 --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/sleepbear669/toDoList/issues"
   },
-  "homepage": "https://github.com/sleepbear669/toDoList#readme"
+  "homepage": "https://github.com/sleepbear669/toDoList#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
