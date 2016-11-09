@@ -1,5 +1,5 @@
 export default class Store{
-    constrouctor(){
+    constructor(){
         this.storage = [];
     }
 

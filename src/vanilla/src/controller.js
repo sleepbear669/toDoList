@@ -1,5 +1,5 @@
 export default class Controller {
-    constrouctor(view, store) {
+    constructor(view, store) {
         this.view = view;
         this.store = store;
     }

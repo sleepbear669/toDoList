@@ -1,35 +1,40 @@
 import Controller from './controller';
 import View from './view';
-import Store from './store';
+import FireBaseStore from './fireBaseStore';
 import Template from './template';
+import ToDoItem from './toDoItem';
 
-let tempHtml = '';
+import {qs , $on} from './helpers';
 
-let templateMaker = value => {
-    return `<tr class="todo-item">
-                    <td>${value}</td>
-                </tr>`;
+const todoInput = qs('.todo-input');
+const todoItemBox = qs('.todo-item-box');
+
+const store = new FireBaseStore();
+const template = new Template();
+//const view = new View(template);
+//const controller = new Controller(view, store);
+//controller.update();
+
+// Initialize Firebase
+
+
+$on(todoInput, 'change', e => {
+        let todo = e.target.value.trim();
+        e.target.value = '';
+        addItem(todo);
+        todoRender();
+    }
+);
+
+const addItem = (todo) => {
+    if (todo) {
+        store.addItem(new ToDoItem(todo));
+    }
 };
 
-let todoInput = document.querySelector('.todo-input');
-let todoItemBox = document.querySelector('.todo-item-box');
-const ENTER = 13;
+const todoRender = () => {
+    todoItemBox.innerHTML = template.makeItemList(store.getItems());
+};
 
-const store = new Store();
-const template = new Template();
-const view = new View(template);
-const controller = new Controller(store, view);
-controller.update();
-
-todoItemBox.innerHTML = tempHtml;
-
-todoInput.addEventListener('keyup', e => {
-    let inputTarget = e.target;
-
-    if (e.keyCode === ENTER && inputTarget.value != '') {
-        tempHtml += templateMaker(e.target.value);
-        todoItemBox.innerHTML = tempHtml;
-        e.target.value = '';
-    }
-});
+todoRender();
 
