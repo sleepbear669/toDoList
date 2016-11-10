@@ -22,19 +22,23 @@ $on(todoInput, 'change', e => {
         let todo = e.target.value.trim();
         e.target.value = '';
         addItem(todo);
-        todoRender();
     }
 );
 
 const addItem = (todo) => {
     if (todo) {
-        store.addItem(new ToDoItem(todo));
+        store.addItem(todo);
     }
 };
 
-const todoRender = () => {
-    todoItemBox.innerHTML = template.makeItemList(store.getItems());
+store.onValue(items => {
+    let todoList = [];
+    for(let id in items){
+        todoList.push(items[id]);
+    }
+    todoRender(todoList);
+});
+const todoRender = (todoList) => {
+    todoItemBox.innerHTML = template.makeItemList(todoList);
+
 };
-
-todoRender();
-

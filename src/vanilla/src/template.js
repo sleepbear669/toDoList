@@ -5,7 +5,7 @@ export default class Template{
     };
     templateMaker = item => {
         return `<tr data-id='${item.id}' class="todo-item">
-                    <td>${item.value}</td>
+                    <td>${item.todo}</td>
                 </tr>`;
     }
 }

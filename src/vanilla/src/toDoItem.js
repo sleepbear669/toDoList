@@ -1,6 +1,7 @@
 export default class ToDoItem{
-    constructor(value){
-        this.id = new Date().getTime();
-        this.value = value;
+    constructor(id, todo){
+        this.id = id;
+        this.createAt = new Date().getTime();
+        this.todo = todo;
     }
 }
