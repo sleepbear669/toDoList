@@ -1,4 +1,3 @@
-import Controller from './controller';
 import View from './view';
 import FireBaseStore from './fireBaseStore';
 import Template from './template';
@@ -16,7 +15,10 @@ const template = new Template();
 //controller.update();
 
 // Initialize Firebase
+const todoRender = (todoList) => {
+    todoItemBox.innerHTML = template.makeItemList(todoList);
 
+};
 
 $on(todoInput, 'change', e => {
         let todo = e.target.value.trim();
@@ -31,14 +33,22 @@ const addItem = (todo) => {
     }
 };
 
-store.onValue(items => {
+const updateStore = items => {
     let todoList = [];
-    for(let id in items){
+    for (let id in items) {
         todoList.push(items[id]);
     }
     todoRender(todoList);
-});
-const todoRender = (todoList) => {
-    todoItemBox.innerHTML = template.makeItemList(todoList);
-
 };
+
+const log = event => {
+    return o => {
+        console.log(event);
+        console.log(o);
+    };
+};
+store.on('todo/', 'value', updateStore);
+store.on('todo/', 'child_added', log('child_added'));
+store.on('todo/', 'child_changed', log('child_changed'));
+store.on('todo/', 'child_removed', log('child_removed'));
+//store.onValue(updateStore());

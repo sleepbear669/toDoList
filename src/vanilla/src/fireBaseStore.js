@@ -14,9 +14,8 @@ export default class FireBaseStore {
         this.database = firebase.database();
     }
 
-    onValue = (callback) => {
-        firebase.database().ref('todo/').on('value', r =>callback(r.val()));
-
+    on = (ref, event, callback) => {
+        firebase.database().ref(ref).on(event, r => callback(r.val()));
     };
 
     addItem = (todo, handle)=> {
