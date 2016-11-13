@@ -1,3 +1,4 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -5,7 +6,8 @@ module.exports = {
         vanilla: "./src/vanilla/src/app.js"
     },
     output: {
-        filename: "./src/[name]/bundle.js"
+        path: "[name]",
+        filename: "app.[hash].js"
     },
     module: {
         loaders: [
@@ -19,6 +21,19 @@ module.exports = {
                 }
             }
         ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['vanilla'],
+            filename: './src/vanilla/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            filename: './src/react/index.html'
+        })
+    ],
+    node: {
+        fs: "empty"
     }
-
 };
