@@ -6,8 +6,7 @@ module.exports = {
         vanilla: "./src/vanilla/src/app.js"
     },
     output: {
-        path: "[name]",
-        filename: "app.[hash].js"
+        filename: "[name].app.[hash].js"
     },
     module: {
         loaders: [
@@ -24,13 +23,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            inject: false,
             chunks: ['vanilla'],
-            filename: './src/vanilla/index.html'
+            template: './src/vanilla/index.html',
+            filename: './vanilla/index.html'
         }),
         new HtmlWebpackPlugin({
             inject: false,
-            filename: './src/react/index.html'
+            template: './src/react/index.html',
+            filename: './react/index.html'
         })
     ],
     node: {

@@ -23,6 +23,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            chunk: ['vanilla'],
+            template: './src/vanilla/index.html',
             filename: './src/vanilla/index.html'
         }),
         new HtmlWebpackPlugin({
