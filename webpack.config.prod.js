@@ -1,4 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -6,7 +8,7 @@ module.exports = {
         vanilla: "./src/vanilla/src/app.js"
     },
     output: {
-        filename: "[name].app.[hash].js"
+        filename: "[name]/app.[hash].js"
     },
     module: {
         loaders: [
@@ -22,6 +24,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['vanilla', 'react', 'angular2']),
         new HtmlWebpackPlugin({
             chunks: ['vanilla'],
             template: './src/vanilla/index.html',
