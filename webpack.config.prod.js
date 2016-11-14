@@ -8,6 +8,7 @@ module.exports = {
         vanilla: "./src/vanilla/src/app.js"
     },
     output: {
+        path: './app',
         filename: "[name]/app.[hash].js"
     },
     module: {
@@ -24,16 +25,16 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['vanilla', 'react', 'angular2']),
+        new CleanWebpackPlugin(['app']),
         new HtmlWebpackPlugin({
             chunks: ['vanilla'],
             template: './src/vanilla/index.html',
-            filename: './vanilla/index.html'
+            filename: 'vanilla/index.html'
         }),
         new HtmlWebpackPlugin({
             inject: false,
             template: './src/react/index.html',
-            filename: './react/index.html'
+            filename: 'react/index.html'
         })
     ],
     node: {
