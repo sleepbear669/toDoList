@@ -3,7 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry : {
-        vanilla: "./src/vanilla/src/app.js"
+        vanilla: "./src/vanilla/js/app.js",
+        react: "./src/react/js/app.js",
     },
     output: {
         filename: "./src/[name]/bundle.js"
@@ -16,19 +17,20 @@ module.exports = {
                 loader: 'babel', // 'babel-loader' is also a legal name to reference
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015', 'stage-2']
+                    presets: ['es2015', 'stage-2', 'react']
                 }
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            chunk: ['vanilla'],
+            chunks: ['vanilla'],
             template: './src/vanilla/index.html',
             filename: './src/vanilla/index.html'
         }),
         new HtmlWebpackPlugin({
-            inject: false,
+            chunks: ['react'],
+            template: './src/react/index.html',
             filename: './src/react/index.html'
         })
     ],

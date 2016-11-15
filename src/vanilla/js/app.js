@@ -43,8 +43,6 @@ const updateStore = items => {
 
 const log = event => {
     return o => {
-        console.log(event);
-        console.log(o);
     };
 };
 store.on('todo/', 'value', updateStore);

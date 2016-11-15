@@ -32,7 +32,7 @@ module.exports = {
             filename: 'vanilla/index.html'
         }),
         new HtmlWebpackPlugin({
-            inject: false,
+            chunks: ['react'],
             template: './src/react/index.html',
             filename: 'react/index.html'
         })
