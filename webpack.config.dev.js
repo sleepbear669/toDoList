@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry : {
-        vanilla: "./src/vanilla/js/app.js",
-        react: "./src/react/js/app.js",
+        vanilla: "./src/vanilla/src/app.js",
+        react: "./src/react/src/app.js"
     },
     output: {
         filename: "./src/[name]/bundle.js"

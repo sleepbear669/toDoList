@@ -1,6 +1,7 @@
 import React from 'react';
 
-import TodoHeader from 'todoHeaderComponent/TodoHeaderComponent';
+import TodoHeader from './todoHeaderComponent/TodoHeaderComponent';
+import TodoContent from './todoContentsComponent/TodoContentComponent';
 
 class TodoView extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class TodoView extends React.Component {
         return (
             <div>
                 <TodoHeader/>
+                <TodoContent/>
             </div>
         );
     }

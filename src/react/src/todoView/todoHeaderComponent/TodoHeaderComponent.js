@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
+import Panel from 'muicss/lib/react/panel';
 
 class TodoHeader extends React.Component{
     constructor(props){
@@ -7,12 +7,14 @@ class TodoHeader extends React.Component{
     }
 
     render() {
+        const titleStyle = {margin : 0};
         return (
             <header>
-                <AppBar
-                    title="Todo List"
-                    showMenuIconButton={false}
-                />
+                <Panel>
+                    <h1 style={titleStyle}>
+                        Todo List
+                    </h1>
+                </Panel>
             </header>
         );
     }

@@ -1,7 +1,7 @@
 import View from './view';
-import FireBaseStore from './fireBaseStore';
+import FireBaseStore from './../../common/FireBaseStore';
 import Template from './template';
-import ToDoItem from './toDoItem';
+import ToDoItem from './../../common/toDoItem';
 
 import {qs , $on} from './helpers';
 
@@ -45,6 +45,7 @@ const log = event => {
     return o => {
     };
 };
+
 store.on('todo/', 'value', updateStore);
 store.on('todo/', 'child_added', log('child_added'));
 store.on('todo/', 'child_changed', log('child_changed'));

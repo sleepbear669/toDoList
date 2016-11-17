@@ -1,4 +1,5 @@
 import ToDoItem from './toDoItem';
+import firebase from 'firebase';
 
 var config = {
     apiKey: "AIzaSyBna5qqyCXl0ozTj9_CrEOFXygThsjb8Fg",
@@ -8,7 +9,7 @@ var config = {
     messagingSenderId: "865509601909"
 };
 
-export default class FireBaseStore {
+class FireBaseStore {
     constructor() {
         firebase.initializeApp(config);
         this.database = firebase.database();
@@ -27,3 +28,4 @@ export default class FireBaseStore {
             });
     }
 }
+export default FireBaseStore;
