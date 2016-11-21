@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         path: './app',
-        filename: "[name]/app.[hash].js"
+        filename: "[name]/app.js"
     },
     module: {
         loaders: [
