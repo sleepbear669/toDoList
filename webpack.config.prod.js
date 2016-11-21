@@ -20,7 +20,7 @@ module.exports = {
                 loader: 'babel', // 'babel-loader' is also a legal name to reference
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015', 'stage-2']
+                    presets: ['es2015', 'stage-2', 'react']
                 }
             }
         ]
