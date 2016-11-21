@@ -5,7 +5,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry : {
-        vanilla: "./src/vanilla/src/app.js"
+        vanilla: "./src/vanilla/src/app.js",
+        react: "./src/react/src/app.js"
     },
     output: {
         path: './app',
