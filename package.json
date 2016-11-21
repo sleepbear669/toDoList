@@ -36,9 +36,6 @@
     "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
-
-
-
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
     "@angular/core": "~2.2.0",
@@ -54,23 +51,22 @@
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
     "zone.js": "^0.6.25"
-
   },
   "dependencies": {
+    "@angular/material": "^2.0.0-alpha.10",
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.45",
+    "angular2-template-loader": "^0.4.0",
+    "concurrently": "^3.0.0",
     "firebase": "^3.6.1",
+    "hammerjs": "^2.0.8",
     "material-ui": "^0.16.2",
     "muicss": "^0.9.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-tap-event-plugin": "^1.0.0",
-
-
-    "@types/core-js": "^0.9.34",
-    "@types/node": "^6.0.45",
-    "concurrently": "^3.0.0",
-    "typescript": "^2.0.3",
-    "angular2-template-loader": "^0.4.0",
     "ts-loader": "^0.8.1",
+    "typescript": "^2.0.3",
     "typings": "^1.3.2"
   }
 }

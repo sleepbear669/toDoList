@@ -1,7 +1,8 @@
 import 'zone.js';
 import 'reflect-metadata';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { TodoListModule } from './todo-list/todo-list.module';
 
 const platform = platformBrowserDynamic();
-platform.bootstrapModule(AppModule);
+
+platform.bootstrapModule(TodoListModule);
