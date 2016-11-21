@@ -22,6 +22,10 @@ module.exports = {
                     cacheDirectory: true,
                     presets: ['es2015', 'stage-2', 'react']
                 }
+            },
+            {
+                test: /\.ts$/,
+                loaders: ['ts', 'angular2-template-loader']
             }
         ]
     },
